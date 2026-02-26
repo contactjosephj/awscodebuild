@@ -1,8 +1,10 @@
-name: Hello World
-on: [push]
-jobs:
-  Hello-World-Job:
-    runs-on:
-      - codebuild--${{ github.run_id }}-${{ github.run_attempt }}
-    steps:
-      - run: echo "Hello World"
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Hello World"
+
+artifacts:
+  files:
+    - '**/*'
